@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكرًا د. محمد عفيفي</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+
+        /* تعديل ألوان الروابط لتبقى ثابتة */
+        a, a:link, a:visited, a:hover, a:active {
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        body { 
+            background: radial-gradient(circle at top, #1e2a44, #0b1220); 
+            color: white; 
+            min-height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            overflow: hidden; 
+        }
+
+        .container { text-align: center; z-index: 1; padding: 20px; }
+
+        .card { 
+            width: 250px; height: 250px; 
+            border-radius: 50%; 
+            border: 4px solid rgba(255, 255, 255, 0.2); 
+            margin: 0 auto 20px auto; 
+            background: #333;
+            overflow: hidden;
+        }
+
+        h1 { font-size: 32px; margin-bottom: 10px; }
+        span { color: #60a5fa; }
+        .sub { font-size: 16px; opacity: 0.8; margin-bottom: 20px; cursor: default; }
+
+        .btn { 
+            padding: 10px 25px; 
+            margin: 5px; 
+            border-radius: 30px; 
+            border: 1px solid rgba(255,255,255,0.3); 
+            background: rgba(255,255,255,0.1); 
+            color: white !important; 
+            text-decoration: none !important; 
+            display: inline-block; 
+            transition: 0.3s;
+        }
+        .btn:hover { background :rgb(43, 71, 226); transform: scale(1.05); }
+
+        .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <div class="card">
+            <img src="main.png" alt="د. محمد عفيفي" style="width:100%">
+        </div>
+        <h1>شكرًا <span>د. عمر طارق</span></h1>
+        <div class="sub">كلية الحاسبات والذكاء الاصطناعي – جامعة الأزهر</div>
+
+        <a href="think.html" class="btn">💌 رسالة التقدير</a>
+        <a href="message.html" class="btn">🎓 أسباب الامتنان</a>
+    </div>
+
+    <script>
+        const starsContainer = document.getElementById("stars");
+        for(let i=0; i<100; i++){
+            let s = document.createElement("div");
+            s.style.position = "absolute";
+            s.style.width = "2px"; s.style.height = "2px";
+            s.style.background = "white";
+            s.style.top = Math.random()*100 + "%";
+            s.style.left = Math.random()*100 + "%";
+            s.style.opacity = Math.random();
+            starsContainer.appendChild(s);
+        }
+    </script>
+</body>
+</html>

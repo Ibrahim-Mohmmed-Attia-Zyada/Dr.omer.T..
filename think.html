@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شكراً لكم</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Cairo', sans-serif; background: linear-gradient(135deg, #1a1f2e 0%, #0f1419 100%); min-height: 100vh; color: #fff; display: flex; flex-direction: column; align-items: center; padding: 20px; }
+        
+        /* إضافة تنسيق الزر الجديد */
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .btn:hover {
+            background: rgba(126, 184, 255, 0.2);
+            border-color: #7eb8ff;
+            transform: scale(1.05);
+        }
+
+        /* باقي التنسيقات كما هي */
+        .particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+        .particle { position: absolute; width: 3px; height: 3px; background: rgba(255, 255, 255, 0.6); border-radius: 50%; animation: float 8s infinite ease-in-out; }
+        @keyframes float { 0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; } 50% { transform: translateY(-30px) translateX(10px); opacity: 0.8; } }
+        .container { position: relative; z-index: 2; max-width: 800px; width: 100%; margin: 0 auto; padding: 60px 20px; display: flex; flex-direction: column; align-items: center; }
+        .main-title { font-size: 2.5rem; margin-bottom: 40px; text-align: center; }
+        .cards-container { display: flex; flex-direction: column; gap: 25px; width: 100%; max-width: 600px; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; padding: 30px; text-align: center; transition: 0.4s; }
+        .card-title { font-size: 1.5rem; font-weight: 700; color: #7eb8ff; margin-bottom: 10px; }
+        .card-description { color: rgba(255, 255, 255, 0.85); line-height: 1.8; }
+        .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent); margin: 40px 0; }
+        .footer-section { text-align: center; }
+        .footer-title { font-size: 1.8rem; margin-bottom: 10px; }
+        .footer-subtitle { color: rgba(255, 255, 255, 0.6); margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="container">
+        <h1 class="main-title">شكراً لك يا دكتور عمر طارق : 🎓</h1>
+
+        <div class="cards-container">
+            <div class="glass-card">
+                <div class="card-title">🌟 نموذج في العطاء</div>
+                <p class="card-description">لم تكن مجرد دكتور يلقي محاضرة، بل رأينا في حضرتكم شغفاً حقيقياً وإخلاصاً ملهماً في إيصال كل معلومة تقنية.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-title">🤝 دعم الطلاب</div>
+                <p class="card-description">نشكرك على سعة صدرك ودعمك الدائم لنا في حل المشكلات التقنية وتجاوز العقبات الأكاديمية.</p>
+            </div>
+            <div class="glass-card">
+                <div class="card-title">🌐 تبسيط المفاهيم</div>
+                <p class="card-description">لقد نجحت في تحويل تعقيدات بروتوكولات الإنترنت وهيكلية الشبكات إلى رحلة تعليمية ممتعة، بفضل أسلوبك الفريد الذي جعل أعقد المفاهيم واضحة.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="footer-section">
+            <h2 class="footer-title">🌹 شكرًا لك على كل ما قدمتهُ لنا ❤️</h2>
+            <h3>وجزاك الله عنا كل خير</h3>
+            <p class="footer-subtitle">طلاب كلية الحاسبات والذكاء الاصطناعي – علوم البيانات</p>
+            
+            <a href="index.html" class="btn">العودة للرئيسية</a>
+        </div>
+    </div>
+
+    <script>
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 50; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.top = Math.random() * 100 + '%';
+            p.style.animationDuration = (Math.random() * 6 + 4) + 's';
+            particlesContainer.appendChild(p);
+        }
+    </script>
+</body>
+</html>
